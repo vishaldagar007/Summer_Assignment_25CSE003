@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[100], n;
+    int index = 0;
+
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    cout << "Enter array elements:\n";
+
+    for(int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    // Move non-zero elements to front
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] != 0)
+        {
+            arr[index] = arr[i];
+            index++;
+        }
+    }
+
+    // Fill remaining positions with zero
+    while(index < n)
+    {
+        arr[index] = 0;
+        index++;
+    }
+
+    cout << "Array after moving zeroes: ";
+
+    for(int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
